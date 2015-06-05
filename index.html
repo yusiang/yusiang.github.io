@@ -1,6 +1,13 @@
 <html>
 <head>
 <script>
+
+var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+
+alert(promo_id);
+
+
+/*
 	if (navigator.userAgent.match(/Android/i)) {            
 		document.location.href = "https://play.google.com/store/apps/details?id=com.cimbdeals";
 	} else if (navigator.userAgent.match(/iPhone|iPad|iPod/i)) {
@@ -8,6 +15,7 @@
 	} else {
         document.location.href = "https://play.google.com/store/apps/details?id=com.cimbdeals";
         }
+*/
 </script>
 </head>
 </html>
