@@ -4,7 +4,33 @@
 
 var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
 
-alert(promo_id);
+var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
+    IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
+    IS_IOS = IS_IPAD || IS_IPHONE,
+    IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
+    IS_MOBILE = IS_IOS || IS_ANDROID;
+
+if (IS_IOS) {
+		if (promo_id) {
+        	window.location = "cimbdeals://promotion?id="+promo_id;
+        } else {
+        	window.location = "cimbdeals://view";
+        }
+    
+        setTimeout(function() {
+            if (!document.webkitHidden) {
+                window.location = 'https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8';
+            }
+        }, 25);
+} else if (IS_ANDROID) {    
+        if (promo_id) {
+        	window.location = 'intent://promotion?id='+promo_id+'#Intent;package=com.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
+		} else {
+			window.location = 'intent://view#Intent;package=com.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
+		}
+} else {
+		window.location = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
+}
 
 
 /*
