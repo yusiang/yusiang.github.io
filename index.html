@@ -24,9 +24,11 @@ if (IS_IOS) {
         }, 25);
 } else if (IS_ANDROID) {    
 	 if (promo_id) {
-        	window.location = 'intent://promotion?id='+promo_id+'#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
+        		//window.location = 'intent://promotion?id='+promo_id+'#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
+        		window.location = 'intent://promotion?id='+promo_id+'#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
 		} else {
-			window.location = 'intent://view/#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
+			//window.location = 'intent://view/#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
+			window.location = 'intent://view/#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
 		}
 } else {
 		window.location = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
