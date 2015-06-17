@@ -12,11 +12,11 @@ var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
 
 if (IS_IOS) {
 		  window.addEventListener("pageshow", function(evt){
-        alert("pageshow");
+        document.body.text='456';
     }, false);
 
     window.addEventListener("pagehide", function(evt){
-       alert("pagehide");
+       document.body.text='789';
     }, false);
 	
 	/*
@@ -40,7 +40,7 @@ if (IS_IOS) {
 			window.location = 'intent://view/#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
 		}
 } else {
-	alert("no");
+	document.body.text='123';
 		//window.location = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
 }
 </script>
