@@ -11,7 +11,6 @@ var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
     IS_MOBILE = IS_IOS || IS_ANDROID;
 
 if (IS_IOS) {
-	document.body.innerHtml = navigator.userAgent;
 	/*
 	if (promo_id) {
         	window.location = "cimbdeals://promotion?id="+promo_id;
@@ -39,4 +38,5 @@ if (IS_IOS) {
 </script>
 </head>
 <body>999</body>
+<script>document.body.innerHtml = navigator.userAgent;</script>
 </html>
