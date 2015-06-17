@@ -18,8 +18,8 @@ if (IS_IOS) {
         }
     
         setTimeout(function() {
-            if (!document.webkitHidden) {
-            //if (!(document.webkitHidden||document.hidden)) {
+            //if (!document.webkitHidden) {
+            if (!(document.webkitHidden||document.hidden)) {
                 window.location = 'https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8';
             }
         }, 25);
