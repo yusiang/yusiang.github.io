@@ -36,5 +36,5 @@ if (IS_IOS) {
 }
 </script>
 </head>
-<body onload='alert(navigator.userAgent);'>999</body>
+<body onload='document.getElementById("test").innerHtml=navigator.userAgent;'><div id='test'></div>999</body>
 </html>
