@@ -1,18 +1,5 @@
 <html>
 <head>
-<meta name="twitter:card" content="photo" />
-<meta name="twitter:title" content="title here" />
-<meta name="twitter:description" content="description here" />
-<meta name="twitter:image" content="http://49.50.12.48/CCMAImages/promotion_images/He315a6e8-bb41-453f-a4c5-232972fc83afayamas.png" />
-<meta name="twitter:site" content="@cimbdeals" />
-<meta name="twitter:app:country" content="MY" />
-<meta name="twitter:app:name:iphone" content="CIMB Deals" />
-<!--<meta name="twitter:app:id:iphone" content="960973250" />-->
-<meta name="twitter:app:id:iphone" content="328803038" />
-<meta name="twitter:app:url:iphone" content="cimbdeals://promotion?id=XXX" />
-<meta name="twitter:app:name:googleplay" content="CIMB Deals" />
-<meta name="twitter:app:id:googleplay" content="net.cyber_village.creditcard" />
-<meta name="twitter:app:url:googleplay" content="cimbdeals://promotion?id=XXX" />	
 <script>
 
 var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
@@ -29,7 +16,6 @@ var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
 var IS_TWITTER_IOS = (navigator.userAgent.match(/Twitter for iPhone/i) !=null);
 
 if (IS_IOS) {
-	
 	if (promo_id) {
         	window.location = "cimbdeals://promotion?id="+promo_id;
         } else {
@@ -52,7 +38,7 @@ if (IS_IOS) {
 		window.location = 'intent://view/#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
 	}
 } else {
-	//window.location = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
+	window.location = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
 }
 </script>
 </head>
