@@ -19,6 +19,7 @@ var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(
 alert(promo_id);
 if (!promo_id) {
     promo_id = window.location.href.split('#')[1];
+    alert(promo_id);
 }
 
 var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
