@@ -15,8 +15,11 @@
 <meta name="twitter:app:url:googleplay" content="cimbdeals://promotion?id=XXX" />	
 <script>
 
-//var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
-var promo_id = window.location.href.split('#')[1];
+var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+
+if (promo_id!=null) {
+    promo_id = window.location.href.split('#')[1];
+}
 
 var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
     IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
