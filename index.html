@@ -14,56 +14,7 @@
 <meta name="twitter:app:id:googleplay" content="net.cyber_village.creditcard" />
 <meta name="twitter:app:url:googleplay" content="cimbdeals://promotion?id=XXX" />
 <script>
-var destination;
-
-var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
-if (!promo_id) {
-    promo_id = window.location.href.split('#')[1];
-}
-
-var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
-    IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
-    IS_IOS = IS_IPAD || IS_IPHONE,
-    IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
-    IS_MOBILE = IS_IOS || IS_ANDROID;
-   
-var IS_TWITTER_IOS = (navigator.userAgent.match(/Twitter for iPhone/i) !=null);
-var IS_TWITTER_ANDROID = (navigator.userAgent.match(/Twitter Android/i) !=null);
-
-if (IS_IOS) {
-	destination = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
-	
-	if (promo_id) {
-        	window.location = "cimbdeals://promotion?id="+promo_id;
-        } else {
-        	window.location = "cimbdeals://view";
-        }
-
-        if (!IS_TWITTER_IOS) {
-        	setTimeout(function() {
-            		if (!document.webkitHidden) {
-                		window.location = 'https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8';
-            		}
-        	}, 25);
-	}
-} else if (IS_ANDROID) {
-	destination = "http://play.google.com/store/apps/details?id=com.cimb.cimbdeals&hl=en";
-	
-	if (IS_TWITTER_ANDROID) {
-		window.location = "cimbdeals://promotion?id="+promo_id;
-	} else {
-		if (promo_id) {
-	        	//window.location = 'intent://promotion?id='+promo_id+'#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
-	        	window.location = 'intent://promotion?id='+promo_id+'#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
-		} else {
-			//window.location = 'intent://view/#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
-			window.location = 'intent://view/#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
-		}
-	}
-} else {
-	destination = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
-	window.location = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
-}
+var destination = "cimbdeals://view";
 </script>
 </head>
 <body>
