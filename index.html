@@ -32,14 +32,14 @@ var IS_TWITTER_ANDROID = (navigator.userAgent.match(/Twitter Android/i) !=null);
 
 if (IS_IOS) {
 	destination = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
-	
+	/*	
 	if (promo_id) {
         	window.location = "cimbdeals://promotion?id="+promo_id;
         } else {
         	window.location = "cimbdeals://view";
         }
 
-	/*
+
         if (!IS_TWITTER_IOS) {
         	setTimeout(function() {
              		if (!document.webkitHidden) {
@@ -47,6 +47,15 @@ if (IS_IOS) {
              		}
          	}, 25);
 	}*/
+	
+	location.href = 'cimbdeals://view';
+    setTimeout(function() {
+        location.href = 'https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8';
+    }, 250);
+    setTimeout(function() {
+        location.reload();
+    }, 1000);
+	
 } else if (IS_ANDROID) {
 	destination = "http://play.google.com/store/apps/details?id=com.cimb.cimbdeals&hl=en";
 	
