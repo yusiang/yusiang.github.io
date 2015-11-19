@@ -19,79 +19,9 @@
 <meta property="al:ios:app_name" content="CIMB Deals" />
 <meta property="og:title" content="Testing 123" />
 <meta property="og:type" content="website" />
-<script>
-var destination;
 
-var promo_id = decodeURIComponent((new RegExp('[?|&]' + 'id' + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
-if (!promo_id) {
-    promo_id = window.location.href.split('#')[1];
-}
-
-var IS_IPAD = navigator.userAgent.match(/iPad/i) != null,
-    IS_IPHONE = !IS_IPAD && ((navigator.userAgent.match(/iPhone/i) != null) || (navigator.userAgent.match(/iPod/i) != null)),
-    IS_IOS = IS_IPAD || IS_IPHONE,
-    IS_ANDROID = !IS_IOS && navigator.userAgent.match(/android/i) != null,
-    IS_MOBILE = IS_IOS || IS_ANDROID;
-   
-var IS_TWITTER_IOS = (navigator.userAgent.match(/Twitter for iPhone/i) !=null);
-var IS_TWITTER_ANDROID = (navigator.userAgent.match(/Twitter Android/i) !=null);
-
-if (IS_IOS) {
-	destination = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
-	/*	
-	if (promo_id) {
-        	window.location = "cimbdeals://promotion?id="+promo_id;
-        } else {
-        	window.location = "cimbdeals://view";
-        }
-
-
-        if (!IS_TWITTER_IOS) {
-        	setTimeout(function() {
-             		if (!document.webkitHidden) {
-                 		window.location = 'https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8';
-             		}
-         	}, 25);
-	}*/
-	
-	location.href = 'cimbdeals://view';
-	var openTime = new Date().getTime();
-	
-    setTimeout(function() {
-    	if (!document.webkitHidden && (new Date().getTime()-openTime<350)) {
-        	location.href = 'https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8';
-    	}
-    }, 250);
-    setTimeout(function() {
-    	if (!document.webkitHidden && (new Date().getTime()-openTime<1100)) {
-        	location.reload();
-    	}
-    }, 1000);
-	
-} else if (IS_ANDROID) {
-	destination = "http://play.google.com/store/apps/details?id=com.cimb.cimbdeals&hl=en";
-	
-	if (IS_TWITTER_ANDROID) {
-		window.location = "cimbdeals://promotion?id="+promo_id;
-	} else {
-		if (promo_id) {
-	        	//window.location = 'intent://promotion?id='+promo_id+'#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
-	        	window.location = 'intent://promotion?id='+promo_id+'#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
-		} else {
-			//window.location = 'intent://view/#Intent;package=com.cimb.cimbdeals;scheme=cimbdeals;launchFlags=268435456;end;';
-			window.location = 'intent://view/#Intent;package=net.cyber_village.creditcard;scheme=cimbdeals;launchFlags=268435456;end;';
-		}
-	}
-} else {
-	destination = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
-	window.location = "https://itunes.apple.com/my/app/cimb-deals/id960973250?mt=8";
-}
-</script>
 </head>
 <body>
-<div style="display: block; text-align: center;">
-  <a id="downloadButton" style="border: none; border-radius: 3em; box-shadow: 2px 2px 2px rgba(0,0,0,0.2); display: inline-block; font-size: 3em; padding: 1em 2em; width: auto; background-color: #2c7caa;  color: #fff !important; text-decoration:none;" href="#">Download CIMB Deals</a>
-</div>
-<script>document.getElementById('downloadButton').href=destination;</script>	
+test
 </body>
 </html>
