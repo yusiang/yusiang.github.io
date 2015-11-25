@@ -69,6 +69,8 @@ if (IS_IOS) {
 } else if (IS_ANDROID) {
 	destination = "http://play.google.com/store/apps/details?id=com.cimb.cimbdeals&hl=en";
 	
+	alert(navigator.userAgent);
+	
 	if (IS_TWITTER_ANDROID) {
 		window.location = "cimbdeals://promotion?id="+promo_id;
 	} else {
